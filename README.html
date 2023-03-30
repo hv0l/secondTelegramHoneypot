@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Honeypot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      margin-top: 1.4em;
+      margin-bottom: 0.5em;
+    }
+
+    pre {
+      background-color: #f4f4f4;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: 'Courier New', Courier, monospace;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simple Honeypot</h1>
+  <p>This is a simple honeypot built in Python. It opens ports 22 (SSH), 443 (HTTP), and 21 (FTP) and logs access attempts. When an access attempt is detected, it sends a message to a Telegram bot with the event information. Additionally, it provides a "graph" command in the Telegram bot to display a graph with all the connections made.</p>
+
+  <h2>Requirements</h2>
+  <ul>
+    <li>Python 3.6 or higher</li>
+    <li>Python libraries required: <code>paramiko</code>, <code>http.server</code>, <code>socketserver</code>, <code>python-telegram-bot</code>, <code>requests</code>, <code>configparser</code>, <code>pyftpdlib</code>, <code>sqlite3</code>, <code>matplotlib</code></li>
+  </ul>
+
+  <h2>Installation</h2>
+  <ol>
+    <li>Clone the repository or download the source code.</li>
+    <li>Install the required libraries by running the following command:
+      <pre>pip3 install --user paramiko http.server socketserver python-telegram-bot requests configparser pyftpdlib sqlite3 matplotlib</pre>
+    </li>
+    <li>Create a <code>config.ini</code> file in the same directory as your script and add the following lines, replacing <code>&lt;YOUR_TELEGRAM_BOT_TOKEN&gt;</code> with your Telegram bot token:
+      <pre>
+[Telegram]
+token = &lt;YOUR_TELEGRAM_BOT_TOKEN&gt;
+      </pre>
+    </li>
+  </ol>
+
+  <h2>Usage</h2>
+  <ol>
+    <li>Run the script with the following command:
+      <pre>python3 script.py</pre>
+    </li>
+    <li>The script will ask you if you want to open ports 22 (SSH), 443 (HTTP), and 21 (FTP). Type "yes" or "no" to continue or cancel the operation.</li>
+    <li>Interact with your Telegram bot to receive notifications about access attempts and use the "graph" command to display a graph with all the connections made.</li>
+  </</ol>
+  <h2>Configuration</h2>
+  <p>The script requires a configuration file named <code>config.ini</code> with your Telegram bot token. The configuration file should be placed in the same directory as the script.</p>
+  <h2>Telegram Bot Commands</h2>
+  <ul>
+    <li><code>/graph</code> - Displays a graph with all the connections made.</li>
+  </ul>
+  <h2>Notes</h2>
+  <ul>
+    <li>This simple honeypot is for educational purposes only and should not be used in production environments.</li>
+    <li>Make sure you have the necessary permissions to open the ports on your system and that you are not violating any terms of service of your hosting provider.</li>
+  </ul>
+  <h2>Acknowledgements</h2>
+  <ul>
+    <li>Python</li>
+    <li>Paramiko</li>
+    <li>Python-telegram-bot</li>
+    <li>Pyftpdlib</li>
+    <li>SQLite3</li>
+    <li>Matplotlib</li>
+  </ul>
+</body>
+</html>
